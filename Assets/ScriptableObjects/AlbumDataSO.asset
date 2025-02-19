@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430fff3611831aa489d52a3a9430102b, type: 3}
+  m_Name: AlbumDataSO
+  m_EditorClassIdentifier: 
+  tracksClips:
+  - track: 0
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+  - track: 1
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}

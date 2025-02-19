@@ -6,8 +6,7 @@ using UnityEngine;
 public class CDColector : MonoBehaviour
 {
     public GameObject particleSystemObject;
-    public AudioSource audioSource;
-    public AudioClip clip;
+    public AllTapes tape;
 
     private bool isCollected = false;
 
@@ -16,8 +15,8 @@ public class CDColector : MonoBehaviour
         if(other.CompareTag("Player") && !isCollected)
         {
             isCollected = true;
-            audioSource.clip = clip;
-            audioSource.Play();
+            MusicSystem.Instance.PlayTapeMusic(tape);
+            InterfaceSystem.Instance.StartMusicTape();
             var instance = Instantiate(particleSystemObject, transform.position, Quaternion.Euler(-90f,0f,0f));
             instance.GetComponent<ParticleSystem>().Play();
             transform.DOScale(new Vector3(0f, 0f, 0f), 1.5f);
