@@ -18,6 +18,7 @@ public class TrackData
 
 public enum AlbumsTapes
 {
+    // Validation
     SucessoFM,
     RumoAVitoria,
     Goddamn,
@@ -29,5 +30,43 @@ public enum AlbumsTapes
     GoingHome,
     TheLordAndMe,
     AnjosDaGuarda,
-    WeGold
+    WeGold,
+    // BittersweetMemories
+    Saude,
+    OFilhoProdigo,
+    LetItPour,
+    TheStory,
+    BackHome,
+    MelhorNao,
+    Oldschool,
+    DirtyDancing,
+    PrefiroMorrer,
+    QuasePerfeito,
+    MaquinaDoTempo,
+    FloresDeOutroCarnaval,
+    // 13LentesDeUmFinalFeliz
+    AuRevoir,
+    Carruagem,
+    Agradeco,
+    Corrida,
+    JoiasDaFamilia,
+    NuncaParo,
+    Memorias,
+    LostInTranslation,
+    Primavera,
+    LetMeSeeTheSun,
+    Adeus,
+    DeixaDoer,
+    NaoMeFacaFalar,
+    // Cybertapes
+    Noite,
+    GhostChroma,
+    DiamantesEPeixes,
+    Akira,
+    NineMM,
+    Tapa,
+    Festa,
+    SmoothAF,
+    Fantasmas,
+    Hitomi
 }

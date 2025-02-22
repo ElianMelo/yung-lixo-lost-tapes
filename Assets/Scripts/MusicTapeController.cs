@@ -8,12 +8,10 @@ public class MusicTapeController : MonoBehaviour
 {
     [SerializeField]
     private RectTransform musicTapeCanvas;
-    //[SerializeField]
-    //private RectTransform musicTapeCanvasTarget;
     [SerializeField]
     private TMP_Text musicTapeName;
     [SerializeField]
-    private Slider musicTapeTime;
+    private Image musicTapeTime;
 
     private int initialPosition = 530;
     private int finalPosition = 0;
@@ -22,9 +20,9 @@ public class MusicTapeController : MonoBehaviour
     {
         TrackData tapeData = MusicSystem.Instance.GetTapeData(tapes);
         musicTapeName.text = tapeData.name;
-        musicTapeTime.value = 0f;
+        musicTapeTime.fillAmount = 0;
+        musicTapeTime.DOFillAmount(1f, tapeData.clip.length).SetEase(Ease.Linear);
         musicTapeCanvas.DOAnchorPosX(finalPosition, 2f);
-        musicTapeTime.DOValue(1f, tapeData.clip.length).SetEase(Ease.Linear);
         StartCoroutine(StopMusicTapeCoroutine(tapeData.clip.length - 2f));
     }
 
@@ -38,7 +36,7 @@ public class MusicTapeController : MonoBehaviour
     {
         musicTapeCanvas.DOAnchorPosX(initialPosition, 2f).OnComplete(() =>
         {
-            musicTapeTime.value = 0f;
+            musicTapeTime.fillAmount = 0f;
         });
     }
 }
