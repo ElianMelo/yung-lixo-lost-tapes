@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93a3851cd39a574c95bc4ed6b4dbfe2, type: 3}
+  m_Name: 06Turtleman
+  m_EditorClassIdentifier: 
+  leftPortrait: {fileID: 21300000, guid: d7968aa68ee1f144390ab967047fbdcb, type: 3}
+  rightPortrait: {fileID: 21300000, guid: 3014540b62ebca64388f8a09d1b27f51, type: 3}
+  dialogs:
+  - text: "You will not stop me. Not one can\u2014not anymore!"
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: b506665794a719f4b9a68ad7137a45a8, type: 3}
+  - text: Stop you from what? What are you trying to achieve?
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 516eed1c0a5cf4440869bff1bc6f2f05, type: 3}
+  - text: They took and took and took from us until we had nothing left to give.
+      I will turn myself into the monster they tried to make me, and butcher them
+      like the pigs they are!
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: cc9ab4a0c5ece2e41b5bb2ece23d3971, type: 3}
+  - text: "You don\u2019t have to do this. Please, Tortoise, come with me."
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 63034b89aaa5e7e47988c9b6eb49e0e9, type: 3}
+  - text: "There\u2019s nothing left of me to save. There\u2019s only one path left
+      for me, and you will not stand in my way."
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 13878933d04d080478a1633dfc568a19, type: 3}
