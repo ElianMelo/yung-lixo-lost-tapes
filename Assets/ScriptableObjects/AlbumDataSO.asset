@@ -13,7 +13,39 @@ MonoBehaviour:
   m_Name: AlbumDataSO
   m_EditorClassIdentifier: 
   tracksClips:
-  - track: 0
+  - tape: 0
     clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
-  - track: 1
+    name: SUCESSO FM
+  - tape: 1
     clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    name: RUMO A VITORIA
+  - tape: 2
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    name: GODDAMN
+  - tape: 3
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    name: I WALK
+  - tape: 4
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    name: WAITING TO FLY
+  - tape: 5
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    name: SONHAR
+  - tape: 6
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    name: IM IN LOVE
+  - tape: 7
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    name: FOR MY FAMILY
+  - tape: 8
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    name: GOING HOME
+  - tape: 9
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    name: THE LORD AND ME
+  - tape: 10
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    name: ANJOS DA GUARDA
+  - tape: 11
+    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    name: WE GOLD

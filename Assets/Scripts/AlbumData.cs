@@ -5,17 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AlbumDataSO", menuName = "ScriptableObjects/AlbumDataSO", order = 1)]
 public class AlbumDataSO : ScriptableObject
 {
-    public List<TrackAudioClip> tracksClips = new List<TrackAudioClip>();
+    public List<TrackData> tracksClips = new List<TrackData>();
 }
 
 [Serializable]
-public class TrackAudioClip
+public class TrackData
 {
-    public AllTapes track;
+    public AlbumsTapes tape;
     public AudioClip clip;
+    public string name;
 }
 
-public enum AllTapes
+public enum AlbumsTapes
 {
     SucessoFM,
     RumoAVitoria,

@@ -25,9 +25,21 @@ public class MusicSystem : MonoBehaviour
         backgroundMusicAudioSource.clip = audioClip;
     }
 
-    public void PlayTapeMusic(AllTapes tape)
+    public TrackData GetTapeData(AlbumsTapes tape)
     {
-        AudioClip clip = albumDataSO.tracksClips.FirstOrDefault(t =>  t.track == tape).clip;
+        foreach (var currentTape in albumDataSO.tracksClips)
+        {
+            if(currentTape.tape == tape)
+            {
+                return currentTape;
+            }
+        }
+        return null;
+    }
+
+    public void PlayTapeMusic(AlbumsTapes tape)
+    {
+        AudioClip clip = albumDataSO.tracksClips.FirstOrDefault(t =>  t.tape == tape).clip;
         PlaySelectedTape(clip);
     }
 

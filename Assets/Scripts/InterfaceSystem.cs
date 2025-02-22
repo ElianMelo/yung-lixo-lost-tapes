@@ -14,8 +14,8 @@ public class InterfaceSystem : MonoBehaviour
         Instance = this;
     }
 
-    public void StartMusicTape()
+    public void StartMusicTape(AlbumsTapes tape)
     {
-        musicTapeController.StartMusicTape();
+        musicTapeController.StartMusicTape(tape);
     }
 }

@@ -1,18 +1,44 @@
 using DG.Tweening;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MusicTapeController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject musicTapeCanvas;
+    private RectTransform musicTapeCanvas;
+    //[SerializeField]
+    //private RectTransform musicTapeCanvasTarget;
+    [SerializeField]
+    private TMP_Text musicTapeName;
+    [SerializeField]
+    private Slider musicTapeTime;
 
-    private int finalPosition = 530;
-    private int initialPosition = 0;
+    private int initialPosition = 530;
+    private int finalPosition = 0;
 
-    public void StartMusicTape()
+    public void StartMusicTape(AlbumsTapes tapes)
     {
-        musicTapeCanvas.transform.DOMove(musicTapeCanvas.transform.position + new Vector3(finalPosition, 0f, 0f), 2f);
+        TrackData tapeData = MusicSystem.Instance.GetTapeData(tapes);
+        musicTapeName.text = tapeData.name;
+        musicTapeTime.value = 0f;
+        musicTapeCanvas.DOAnchorPosX(finalPosition, 2f);
+        musicTapeTime.DOValue(1f, tapeData.clip.length).SetEase(Ease.Linear);
+        StartCoroutine(StopMusicTapeCoroutine(tapeData.clip.length - 2f));
+    }
+
+    private IEnumerator StopMusicTapeCoroutine(float clipLength)
+    {
+        yield return new WaitForSeconds(clipLength);
+        StopMusicTape();
+    }
+
+    private void StopMusicTape()
+    {
+        musicTapeCanvas.DOAnchorPosX(initialPosition, 2f).OnComplete(() =>
+        {
+            musicTapeTime.value = 0f;
+        });
     }
 }
