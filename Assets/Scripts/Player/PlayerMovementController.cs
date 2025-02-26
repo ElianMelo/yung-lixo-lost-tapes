@@ -86,6 +86,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMananger.Instance.CurrentState == GamePauseState.Paused) return;
         // grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         if (grounded) jumps = maxJumps;
 
@@ -112,6 +113,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (PauseMananger.Instance.CurrentState == GamePauseState.Paused) return;
         Move();
         RotatePlayer();
     }

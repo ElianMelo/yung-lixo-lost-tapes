@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b93a3851cd39a574c95bc4ed6b4dbfe2, type: 3}
-  m_Name: DialogData
+  m_Name: CowDialogData
   m_EditorClassIdentifier: 
-  leftPortrait: {fileID: 0}
-  rightPortrait: {fileID: 0}
+  leftPortrait: {fileID: 21300000, guid: 7c105eff59bc47144878626eb514c54b, type: 3}
+  rightPortrait: {fileID: 21300000, guid: 5ceb54b79392b114b9dac499ccc89698, type: 3}
   dialogs:
-  - text: "BAAAAmm\t"
+  - text: PUUUUUUUUUUUNNNNN
     isFirstPortrait: 0
     isBothPortrait: 0
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: f4587661a318dba419b1e8626e4d2993, type: 3}
   - text: Bizarro
     isFirstPortrait: 1
     isBothPortrait: 0

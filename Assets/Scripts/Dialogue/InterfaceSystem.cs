@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class InterfaceSystem : MonoBehaviour
 {
@@ -14,8 +14,6 @@ public class InterfaceSystem : MonoBehaviour
     public DialogManager dialogManager;
     public MenuManager menuManager;
     public settingsManager settingsManager;
-    public GameObject help;
-    public TMP_Text helpText;
 
     private DialogData dialogData;
 
@@ -37,6 +35,7 @@ public class InterfaceSystem : MonoBehaviour
     {
         dialogManager.gameObject.SetActive(true);
         dialogManager.InitDialog(this.dialogData);
+        PauseMananger.Instance.ChangeGamePauseState(GamePauseState.Paused);
     }
 
     public void OpenMenu()
@@ -50,7 +49,6 @@ public class InterfaceSystem : MonoBehaviour
     public void CloseMenu()
     {
         menuManager.gameObject.SetActive(false);
-        help.SetActive(false);
         settingsManager.gameObject.SetActive(false);
         OpenedMenu = false;
         OpenedSettings = false;
@@ -62,7 +60,6 @@ public class InterfaceSystem : MonoBehaviour
     public void OpenHelpMenu()
     {
         CloseMenu();
-        help.SetActive(true);
         UnityEngine.Cursor.lockState = CursorLockMode.None;
         UnityEngine.Cursor.visible = true;
         OpenedHelp = true;
@@ -81,7 +78,6 @@ public class InterfaceSystem : MonoBehaviour
     public void BackToMenu()
     {
         settingsManager.gameObject.SetActive(false);
-        help.SetActive(false);
         OpenMenu();
         OpenedSettings = false;
         OpenedHelp = false;

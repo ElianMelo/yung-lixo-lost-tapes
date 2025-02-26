@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -208,7 +208,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -336,7 +336,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6046408083959663057}
   - component: {fileID: 8053076538626565266}
-  - component: {fileID: 5972990591138757022}
+  - component: {fileID: 4347028546587734056}
   m_Layer: 0
   m_Name: System
   m_TagString: Untagged
@@ -473,7 +473,7 @@ MonoBehaviour:
   - {fileID: 5790600259974081916}
   - {fileID: 1982572603620506628}
   albumDataSO: {fileID: 11400000, guid: 06c066adc19c4d0468a6fc43fe841810, type: 2}
---- !u!114 &5972990591138757022
+--- !u!114 &4347028546587734056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -482,10 +482,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8183428165021368496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685c678c46122564fb60412252e35d70, type: 3}
+  m_Script: {fileID: 11500000, guid: 21871eb8f4dccad49b5ab887d940d26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicTapeController: {fileID: 0}
+  CurrentState: 0
 --- !u!1 &8776641475208720475
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +530,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -658,7 +658,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
