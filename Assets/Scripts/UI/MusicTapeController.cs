@@ -21,6 +21,7 @@ public class MusicTapeController : MonoBehaviour
         TrackData tapeData = MusicSystem.Instance.GetTapeData(tapes);
         musicTapeName.text = tapeData.name;
         musicTapeTime.fillAmount = 0;
+        DOTween.Kill(musicTapeTime);
         musicTapeTime.DOFillAmount(1f, tapeData.clip.length).SetEase(Ease.Linear);
         musicTapeCanvas.DOAnchorPosX(finalPosition, 2f);
         StartCoroutine(StopMusicTapeCoroutine(tapeData.clip.length - 2f));

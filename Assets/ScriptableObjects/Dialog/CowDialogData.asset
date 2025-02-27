@@ -22,4 +22,4 @@ MonoBehaviour:
   - text: Bizarro
     isFirstPortrait: 1
     isBothPortrait: 0
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: d80d32ff9d852f946807ad3aa0ab2047, type: 3}
