@@ -14,38 +14,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracksClips:
   - tape: 0
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: 47e04fc155d2f4b418d4bb2dc12442a2, type: 3}
     name: SUCESSO FM
   - tape: 1
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: af9b6b6077a4bad48946aec12e4711bb, type: 3}
     name: RUMO A VITORIA
   - tape: 2
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: 49cb7b763ccf5e64586560bb99913b84, type: 3}
     name: GODDAMN
   - tape: 3
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: 1c0c0b179275c5245aa4a20289a8cddb, type: 3}
     name: I WALK
   - tape: 4
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: bb2d7268adedac54cad4ad1ebd924b21, type: 3}
     name: WAITING TO FLY
   - tape: 5
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: 12a643feb7017b94680701877fd8137b, type: 3}
     name: SONHAR
   - tape: 6
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: 4b32976a40eedf9498ed494e4e910f75, type: 3}
     name: IM IN LOVE
   - tape: 7
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: 4258c7e0db60f704b832ac21593f9870, type: 3}
     name: FOR MY FAMILY
   - tape: 8
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: 96dd63fb25f160a4bbaed7d914a85f5e, type: 3}
     name: GOING HOME
   - tape: 9
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: 80c45dc3ca4018643abdbce18a465780, type: 3}
     name: THE LORD AND ME
   - tape: 10
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: 6dc935e29a99dab49a5021c708960399, type: 3}
     name: ANJOS DA GUARDA
   - tape: 11
-    clip: {fileID: 8300000, guid: d4d5f9528b8c95f40b4f524a4f5531fd, type: 3}
+    clip: {fileID: 8300000, guid: 321b8d7a38076034c8a260f6d884cee9, type: 3}
     name: WE GOLD
