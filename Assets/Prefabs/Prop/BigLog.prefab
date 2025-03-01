@@ -223,9 +223,41 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7460263180954297088, guid: 1dcf52ba17054374d8fd3ad8c5497659, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5828045078844428198, guid: 1dcf52ba17054374d8fd3ad8c5497659, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 896008932461208034, guid: 1dcf52ba17054374d8fd3ad8c5497659, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1dcf52ba17054374d8fd3ad8c5497659, type: 3}
       propertyPath: m_Name
       value: BigLog
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1dcf52ba17054374d8fd3ad8c5497659, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1dcf52ba17054374d8fd3ad8c5497659, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378965682308988858, guid: 1dcf52ba17054374d8fd3ad8c5497659, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402163078210095186, guid: 1dcf52ba17054374d8fd3ad8c5497659, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918178738982016510, guid: 1dcf52ba17054374d8fd3ad8c5497659, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
