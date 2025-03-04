@@ -10,42 +10,56 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 430fff3611831aa489d52a3a9430102b, type: 3}
-  m_Name: AlbumDataSO
+  m_Name: ValidationAlbumDataSO
   m_EditorClassIdentifier: 
+  albumName: Validation
+  albumCover: {fileID: 21300000, guid: 08b322718525b0845b93a691c7b3f035, type: 3}
   tracksClips:
   - tape: 0
     clip: {fileID: 8300000, guid: 47e04fc155d2f4b418d4bb2dc12442a2, type: 3}
     name: SUCESSO FM
+    number: 01
   - tape: 1
     clip: {fileID: 8300000, guid: af9b6b6077a4bad48946aec12e4711bb, type: 3}
     name: RUMO A VITORIA
+    number: 02
   - tape: 2
     clip: {fileID: 8300000, guid: 49cb7b763ccf5e64586560bb99913b84, type: 3}
     name: GODDAMN
+    number: 03
   - tape: 3
     clip: {fileID: 8300000, guid: 1c0c0b179275c5245aa4a20289a8cddb, type: 3}
     name: I WALK
+    number: 04
   - tape: 4
     clip: {fileID: 8300000, guid: bb2d7268adedac54cad4ad1ebd924b21, type: 3}
     name: WAITING TO FLY
+    number: 05
   - tape: 5
     clip: {fileID: 8300000, guid: 12a643feb7017b94680701877fd8137b, type: 3}
     name: SONHAR
+    number: 06
   - tape: 6
     clip: {fileID: 8300000, guid: 4b32976a40eedf9498ed494e4e910f75, type: 3}
     name: IM IN LOVE
+    number: 07
   - tape: 7
     clip: {fileID: 8300000, guid: 4258c7e0db60f704b832ac21593f9870, type: 3}
     name: FOR MY FAMILY
+    number: 08
   - tape: 8
     clip: {fileID: 8300000, guid: 96dd63fb25f160a4bbaed7d914a85f5e, type: 3}
     name: GOING HOME
+    number: 09
   - tape: 9
     clip: {fileID: 8300000, guid: 80c45dc3ca4018643abdbce18a465780, type: 3}
     name: THE LORD AND ME
+    number: 10
   - tape: 10
     clip: {fileID: 8300000, guid: 6dc935e29a99dab49a5021c708960399, type: 3}
     name: ANJOS DA GUARDA
+    number: 11
   - tape: 11
     clip: {fileID: 8300000, guid: 321b8d7a38076034c8a260f6d884cee9, type: 3}
     name: WE GOLD
+    number: 12

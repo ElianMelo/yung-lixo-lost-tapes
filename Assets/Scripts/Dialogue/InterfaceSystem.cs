@@ -4,6 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum MenuStates
+{
+    Disabled,
+    Enabled,
+    Settings,
+    Album,
+}
+
 public class InterfaceSystem : MonoBehaviour
 {
     [SerializeField]
@@ -14,12 +22,11 @@ public class InterfaceSystem : MonoBehaviour
     public DialogManager dialogManager;
     public MenuManager menuManager;
     public settingsManager settingsManager;
+    public AlbumMenuController albumMenuController;
 
     private DialogData dialogData;
 
-    public bool OpenedMenu = false;
-    public bool OpenedSettings = false;
-    public bool OpenedHelp = false;
+    public MenuStates currentMenuState = MenuStates.Disabled;
 
     private void Awake()
     {
@@ -38,40 +45,51 @@ public class InterfaceSystem : MonoBehaviour
         PauseMananger.Instance.ChangeGamePauseState(GamePauseState.Paused);
     }
 
+    public void RevealTrack(AlbumsTapes tape)
+    {
+        albumMenuController.RevealTrack(tape);
+    }
+
+    public void OpenAlbumMenu()
+    {
+        albumMenuController.Activate();
+        currentMenuState = MenuStates.Album;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void CloseAlbumMenu()
+    {
+        albumMenuController.Deactivate();
+        currentMenuState = MenuStates.Disabled;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     public void OpenMenu()
     {
         menuManager.gameObject.SetActive(true);
-        OpenedMenu = true;
-        UnityEngine.Cursor.lockState = CursorLockMode.None;
-        UnityEngine.Cursor.visible = true;
+        currentMenuState = MenuStates.Enabled;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void CloseMenu()
     {
         menuManager.gameObject.SetActive(false);
         settingsManager.gameObject.SetActive(false);
-        OpenedMenu = false;
-        OpenedSettings = false;
-        OpenedHelp = false;
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-        UnityEngine.Cursor.visible = false;
-    }
-
-    public void OpenHelpMenu()
-    {
-        CloseMenu();
-        UnityEngine.Cursor.lockState = CursorLockMode.None;
-        UnityEngine.Cursor.visible = true;
-        OpenedHelp = true;
+        currentMenuState = MenuStates.Disabled;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void OpenSettingsMenu() 
     {
         CloseMenu();
         settingsManager.gameObject.SetActive(true);
-        UnityEngine.Cursor.lockState = CursorLockMode.None;
-        UnityEngine.Cursor.visible = true;
-        OpenedSettings = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        currentMenuState = MenuStates.Settings;
 
     }
 
@@ -79,8 +97,7 @@ public class InterfaceSystem : MonoBehaviour
     {
         settingsManager.gameObject.SetActive(false);
         OpenMenu();
-        OpenedSettings = false;
-        OpenedHelp = false;
+        currentMenuState = MenuStates.Enabled;
     }
 
     public void StartMusicTape(AlbumsTapes tape)

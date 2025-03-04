@@ -27,15 +27,15 @@ public class DialogTrigger : MonoBehaviour
         {
             if (PauseMananger.Instance.CurrentState == GamePauseState.Talking) return;
 
-            if (!InterfaceSystem.Instance.OpenedMenu && !InterfaceSystem.Instance.OpenedSettings)
+            if (InterfaceSystem.Instance.currentMenuState == MenuStates.Disabled)
             {
                 PauseMananger.Instance.ChangeGamePauseState(GamePauseState.Paused);
-                InterfaceSystem.Instance.OpenMenu();
+                InterfaceSystem.Instance.OpenAlbumMenu();
             }
             else
             {
                 PauseMananger.Instance.ChangeGamePauseState(GamePauseState.Walking);
-                InterfaceSystem.Instance.CloseMenu();
+                InterfaceSystem.Instance.CloseAlbumMenu();
             }
         }
     }

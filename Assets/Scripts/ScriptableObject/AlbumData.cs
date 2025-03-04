@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AlbumDataSO", menuName = "ScriptableObjects/AlbumDataSO", order = 1)]
 public class AlbumDataSO : ScriptableObject
 {
+    public string albumName;
+    public Sprite albumCover;
     public List<TrackData> tracksClips = new List<TrackData>();
 }
 
@@ -14,6 +16,7 @@ public class TrackData
     public AlbumsTapes tape;
     public AudioClip clip;
     public string name;
+    public string number;
 }
 
 public enum AlbumsTapes
