@@ -300,7 +300,7 @@ public class PlayerMovementController : MonoBehaviour
         playerAnimator.SetTrigger(KickAnim);
     }
 
-    private void Jump()
+    public void Jump(bool doubleForce = false)
     {
         if(grounded)
         {
@@ -309,9 +309,9 @@ public class PlayerMovementController : MonoBehaviour
         {
             playerAnimator.SetTrigger(JumpTwoAnim);
         }
-
+        var calculatedForce = doubleForce ? jumpForce * 2 : jumpForce;
         playerRb.velocity = new Vector3(playerRb.velocity.x, 0f, playerRb.velocity.z);
-        playerRb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        playerRb.AddForce(transform.up * calculatedForce, ForceMode.Impulse);
     }
 
     private bool OnSlope()
