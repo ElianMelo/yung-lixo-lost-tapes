@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class MusicSystem : MonoBehaviour
 {
-    [SerializeField]
-    private AudioSource backgroundMusicAudioSource;
-    [SerializeField]
-    private AudioSource tapeMusicAudioSource;
-    [SerializeField]
-    private List<AudioSource> soundChannelList;
-    [SerializeField]
-    private AlbumDataSO albumDataSO;
+    [SerializeField] private AudioSource backgroundMusicAudioSource;
+    [SerializeField] private AudioSource tapeMusicAudioSource;
+    [SerializeField] private List<AudioSource> soundChannelList;
+    [SerializeField] private AlbumDataSO albumDataSO;
 
     public static MusicSystem Instance;
 
@@ -41,6 +37,7 @@ public class MusicSystem : MonoBehaviour
     {
         AudioClip clip = albumDataSO.tracksClips.FirstOrDefault(t =>  t.tape == tape).clip;
         PlaySelectedTape(clip);
+        InterfaceSystem.Instance.SetupAlbumMenuTrack();
     }
 
     public void PlaySound(AudioClip audioClip)
@@ -52,5 +49,20 @@ public class MusicSystem : MonoBehaviour
     {
         tapeMusicAudioSource.clip = audioClip;
         tapeMusicAudioSource.Play();
+    }
+
+    public void PlayTape()
+    {
+        tapeMusicAudioSource.Play();
+    }
+
+    public void PauseTape()
+    {
+        tapeMusicAudioSource.Pause();
+    }
+
+    public void StopTape()
+    {
+        tapeMusicAudioSource.Stop();
     }
 }

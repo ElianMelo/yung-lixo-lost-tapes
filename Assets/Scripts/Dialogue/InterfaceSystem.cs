@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum MenuStates
 {
@@ -14,8 +10,7 @@ public enum MenuStates
 
 public class InterfaceSystem : MonoBehaviour
 {
-    [SerializeField]
-    private MusicTapeController musicTapeController;
+    [SerializeField] private MusicTapeController musicTapeController;
 
     public static InterfaceSystem Instance;
 
@@ -90,7 +85,6 @@ public class InterfaceSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         currentMenuState = MenuStates.Settings;
-
     }
 
     public void BackToMenu()
@@ -103,5 +97,10 @@ public class InterfaceSystem : MonoBehaviour
     public void StartMusicTape(AlbumsTapes tape)
     {
         musicTapeController.StartMusicTape(tape);
+    }
+
+    public void SetupAlbumMenuTrack()
+    {
+        albumMenuController.SetupAlbumMenuTrack();
     }
 }

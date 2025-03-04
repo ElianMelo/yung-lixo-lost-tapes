@@ -1,5 +1,8 @@
+using DG.Tweening;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AlbumMenuController : MonoBehaviour
 {
@@ -8,27 +11,29 @@ public class AlbumMenuController : MonoBehaviour
     [SerializeField] private AlbumDataSO albumDataSO;
     [SerializeField] private Transform parentListOfTracks;
     [SerializeField] private GameObject trackPrefab;
-    [SerializeField] private AudioSource audioSource;
+
+    [SerializeField] private TMP_Text currentTrackText;
+    [SerializeField] private Image currentTrackProgress;
 
     private List<TrackLine> tracks = new List<TrackLine>();
 
     public GameObject albumMenuVisuals;
+    public AlbumsTapes currentTape;
 
     void Start()
     {
-        audioSource.clip = albumDataSO.tracksClips[0].clip;
         foreach (var currentTrack in albumDataSO.tracksClips)
         {
             GameObject trackInstance = Instantiate(trackPrefab, parentListOfTracks);
             TrackLine trackLine = trackInstance.GetComponent<TrackLine>();
             string fullTextValue = currentTrack.number + " - " + currentTrack.name;
             string hiddenTextValue = currentTrack.number + " - -----------------------";
-            trackLine.SelectedTrack = currentTrack.tape;
+            trackLine.selectedTrack = currentTrack.tape;
             trackLine.clip = currentTrack.clip;
-            trackLine.controller = this;
             trackLine.SetFullTextValue(fullTextValue);
             trackLine.SetHiddenTextValue(hiddenTextValue);
             trackLine.SetupTextFieldPlaceholder();
+            trackLine.SetController(this);
             tracks.Add(trackLine);
         }
     }
@@ -37,33 +42,22 @@ public class AlbumMenuController : MonoBehaviour
     {
         foreach (var track in tracks)
         {
-            if (track.SelectedTrack == tape)
+            if (track.selectedTrack == tape)
             {
+                currentTape = tape;
                 track.SetupTextField();
                 return;
             }
         }
     }
 
-    public void PlayTrack(TrackLine trackLine)
+    public void SetupAlbumMenuTrack()
     {
-        audioSource.clip = trackLine.clip;
-        audioSource.Play();
-    }
-
-    public void PlayCurrentTrack()
-    {
-        audioSource.Play();
-    }
-
-    public void PauseCurrentTrack()
-    {
-        audioSource.Pause();
-    }
-
-    public void StopCurrentTrack()
-    {
-        audioSource.Stop();
+        TrackData tapeData = MusicSystem.Instance.GetTapeData(currentTape);
+        currentTrackText.text = tapeData.name;
+        currentTrackProgress.fillAmount = 0;
+        DOTween.Kill(currentTrackProgress);
+        currentTrackProgress.DOFillAmount(1f, tapeData.clip.length).SetEase(Ease.Linear);
     }
 
     public void Activate()
@@ -75,5 +69,20 @@ public class AlbumMenuController : MonoBehaviour
     {
         albumMenuVisuals.SetActive(false);
     }
-    
+
+    public void PlayTape()
+    {
+        MusicSystem.Instance.PlayTape();
+    }
+
+    public void StopTape()
+    {
+        MusicSystem.Instance.StopTape();
+    }
+
+    public void PauseTape()
+    {
+        MusicSystem.Instance.PauseTape();
+    }
+
 }

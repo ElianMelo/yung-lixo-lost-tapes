@@ -1,6 +1,4 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CDColector : MonoBehaviour
@@ -15,9 +13,9 @@ public class CDColector : MonoBehaviour
         if(other.CompareTag("Player") && !isCollected)
         {
             isCollected = true;
-            MusicSystem.Instance.PlayTapeMusic(tape);
             InterfaceSystem.Instance.StartMusicTape(tape);
             InterfaceSystem.Instance.RevealTrack(tape);
+            MusicSystem.Instance.PlayTapeMusic(tape);
             var instance = Instantiate(particleSystemObject, transform.position, Quaternion.Euler(-90f,0f,0f));
             instance.GetComponent<ParticleSystem>().Play();
             transform.DOScale(new Vector3(0f, 0f, 0f), 1.5f);
