@@ -27,6 +27,13 @@ public class MusicTapeController : MonoBehaviour
         StartCoroutine(StopMusicTapeCoroutine(tapeData.clip.length - 2f));
     }
 
+    public void EarlyInterfaceReturn()
+    {
+        StopAllCoroutines();
+        DOTween.Kill(musicTapeCanvas);
+        musicTapeCanvas.DOAnchorPosX(initialPosition, 0.1f).SetEase(Ease.OutExpo);
+    }
+
     private IEnumerator StopMusicTapeCoroutine(float clipLength)
     {
         yield return new WaitForSeconds(clipLength);

@@ -51,6 +51,23 @@ public class AlbumMenuController : MonoBehaviour
         }
     }
 
+    public void ResumeAlbumTrack()
+    {
+        TrackData tapeData = MusicSystem.Instance.GetTapeData(currentTape);
+        currentTrackProgress.DOFillAmount(1f, tapeData.clip.length).SetEase(Ease.Linear);
+    }
+
+    public void PauseAlbumTrack()
+    {
+        DOTween.Kill(currentTrackProgress);
+    }
+
+    public void StopAlbumTrack()
+    {
+        currentTrackProgress.fillAmount = 0f;
+        DOTween.Kill(currentTrackProgress);
+    }
+
     public void SetupAlbumMenuTrack()
     {
         TrackData tapeData = MusicSystem.Instance.GetTapeData(currentTape);
@@ -72,16 +89,19 @@ public class AlbumMenuController : MonoBehaviour
 
     public void PlayTape()
     {
+        ResumeAlbumTrack();
         MusicSystem.Instance.PlayTape();
     }
 
     public void StopTape()
     {
+        StopAlbumTrack();
         MusicSystem.Instance.StopTape();
     }
 
     public void PauseTape()
     {
+        PauseAlbumTrack();
         MusicSystem.Instance.PauseTape();
     }
 

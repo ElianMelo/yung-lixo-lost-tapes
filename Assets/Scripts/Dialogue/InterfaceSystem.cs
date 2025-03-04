@@ -47,6 +47,7 @@ public class InterfaceSystem : MonoBehaviour
 
     public void OpenAlbumMenu()
     {
+        musicTapeController.EarlyInterfaceReturn();
         albumMenuController.Activate();
         currentMenuState = MenuStates.Album;
         Cursor.lockState = CursorLockMode.None;
@@ -63,6 +64,7 @@ public class InterfaceSystem : MonoBehaviour
 
     public void OpenMenu()
     {
+        musicTapeController.EarlyInterfaceReturn();
         menuManager.gameObject.SetActive(true);
         currentMenuState = MenuStates.Enabled;
         Cursor.lockState = CursorLockMode.None;

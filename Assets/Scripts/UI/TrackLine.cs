@@ -44,6 +44,7 @@ public class TrackLine : MonoBehaviour
     public void PlayCurrentTrack()
     {
         if (!isActive) return;
+        albumMenuController.StopAlbumTrack();
         albumMenuController.currentTape = selectedTrack;
         MusicSystem.Instance.PlayTapeMusic(selectedTrack);
         InterfaceSystem.Instance.SetupAlbumMenuTrack();
