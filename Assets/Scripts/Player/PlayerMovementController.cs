@@ -129,7 +129,7 @@ public class PlayerMovementController : MonoBehaviour
             Jump();
         }
 
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(Input.GetKeyDown(KeyCode.F))
         {
             Kick();
         }
