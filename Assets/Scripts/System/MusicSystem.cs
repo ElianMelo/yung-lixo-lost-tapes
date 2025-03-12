@@ -56,12 +56,13 @@ public class MusicSystem : MonoBehaviour
     {
         foreach (var currentChannel in soundChannelList)
         {
-            if(currentChannel.isPlaying)
+            if (currentChannel.isPlaying)
             {
                 continue;
             }
             currentChannel.clip = audioClip;
             currentChannel.Play();
+            return;
         }
     }
 
