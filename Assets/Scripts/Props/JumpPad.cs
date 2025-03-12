@@ -12,6 +12,7 @@ public class JumpPad : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isJumping = true;
+            MusicSystem.Instance.PlaySound(SoundEffects.JumpPad);
             Sequence sequence = DOTween.Sequence();
             collision.gameObject.GetComponent<PlayerMovementController>().Jump(true);
             sequence.Append(transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f).SetEase(Ease.Linear));

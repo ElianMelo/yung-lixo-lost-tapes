@@ -21,6 +21,6 @@ public enum SoundEffects
     CollectCD,
     CollectCoin,
     Jump,
-    Mushroom,
+    JumpPad,
     TakeDamage
 }

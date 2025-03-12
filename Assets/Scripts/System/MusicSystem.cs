@@ -54,8 +54,15 @@ public class MusicSystem : MonoBehaviour
 
     private void PlaySoundEffect(AudioClip audioClip)
     {
-        soundChannelList[0].clip = audioClip;
-        soundChannelList[0].Play();
+        foreach (var currentChannel in soundChannelList)
+        {
+            if(currentChannel.isPlaying)
+            {
+                continue;
+            }
+            currentChannel.clip = audioClip;
+            currentChannel.Play();
+        }
     }
 
     private void PlaySelectedTape(AudioClip audioClip)

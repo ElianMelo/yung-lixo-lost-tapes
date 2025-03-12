@@ -298,6 +298,7 @@ public class PlayerMovementController : MonoBehaviour
     }
     private void Kick()
     {
+        MusicSystem.Instance.PlaySound(SoundEffects.Attack);
         playerAnimator.SetTrigger(KickAnim);
     }
 

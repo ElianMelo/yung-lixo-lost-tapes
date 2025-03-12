@@ -30,10 +30,12 @@ public class GenericEnemy : MonoBehaviour
             if (Vector3.Dot(upward, toOther) < 0.3f)
             {
                 // player take damage
+                MusicSystem.Instance.PlaySound(SoundEffects.TakeDamage);
                 collision.gameObject.GetComponent<PlayerMovementController>().Knockback(collision.transform.position - transform.position);
             } else
             {
                 // enemy take damage
+                MusicSystem.Instance.PlaySound(SoundEffects.TakeDamage);
                 Destroy(gameObject);
             }
 
