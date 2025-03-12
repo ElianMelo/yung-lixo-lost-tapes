@@ -303,6 +303,7 @@ public class PlayerMovementController : MonoBehaviour
 
     public void Jump(bool doubleForce = false)
     {
+        MusicSystem.Instance.PlaySound(SoundEffects.Jump);
         if(grounded)
         {
             playerAnimator.SetTrigger(JumpAnim);

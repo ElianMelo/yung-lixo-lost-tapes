@@ -473,6 +473,7 @@ MonoBehaviour:
   - {fileID: 5790600259974081916}
   - {fileID: 1982572603620506628}
   albumDataSO: {fileID: 11400000, guid: 06c066adc19c4d0468a6fc43fe841810, type: 2}
+  soundDataSO: {fileID: 11400000, guid: ea778b5267451e44d8acacdd68ac6bb3, type: 2}
 --- !u!114 &4347028546587734056
 MonoBehaviour:
   m_ObjectHideFlags: 0

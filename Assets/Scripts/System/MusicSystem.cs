@@ -8,6 +8,7 @@ public class MusicSystem : MonoBehaviour
     [SerializeField] private AudioSource tapeMusicAudioSource;
     [SerializeField] private List<AudioSource> soundChannelList;
     [SerializeField] private AlbumDataSO albumDataSO;
+    [SerializeField] private SoundDataSO soundDataSO;
 
     public static MusicSystem Instance;
 
@@ -40,9 +41,21 @@ public class MusicSystem : MonoBehaviour
         InterfaceSystem.Instance.SetupAlbumMenuTrack();
     }
 
-    public void PlaySound(AudioClip audioClip)
+    public void PlaySound(SoundEffects soundEffects)
     {
+        foreach (var soundClipData in soundDataSO.soundClips)
+        {
+            if(soundClipData.sound == soundEffects)
+            {
+                PlaySoundEffect(soundClipData.clip);
+            }
+        }
+    }
 
+    private void PlaySoundEffect(AudioClip audioClip)
+    {
+        soundChannelList[0].clip = audioClip;
+        soundChannelList[0].Play();
     }
 
     private void PlaySelectedTape(AudioClip audioClip)
