@@ -23,22 +23,23 @@ public class GenericEnemy : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Vector3 upward = transform.TransformDirection(Vector3.up);
-            Vector3 toOther = Vector3.Normalize(collision.transform.position - transform.position);
+            PlayerMovementController playerMovementController = collision.gameObject.GetComponent<PlayerMovementController>();
 
-            
-            if (Vector3.Dot(upward, toOther) < 0.3f)
+            if(playerMovementController.isAttacking)
             {
-                // player take damage
-                MusicSystem.Instance.PlaySound(SoundEffects.TakeDamage);
-                collision.gameObject.GetComponent<PlayerMovementController>().Knockback(collision.transform.position - transform.position);
+                Death();
             } else
             {
-                // enemy take damage
                 MusicSystem.Instance.PlaySound(SoundEffects.TakeDamage);
-                Destroy(gameObject);
+                playerMovementController.Knockback(transform.position - collision.transform.position);
             }
-
         }
+    }
+
+    public void Death()
+    {
+        MusicSystem.Instance.PlaySound(SoundEffects.TakeDamage);
+        VFXSystem.Instance.PlayCDCollectVFX(transform.position);
+        Destroy(gameObject);
     }
 }

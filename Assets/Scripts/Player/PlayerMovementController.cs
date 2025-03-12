@@ -30,6 +30,7 @@ public class PlayerMovementController : MonoBehaviour
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftControl;
+    public KeyCode attackKey = KeyCode.F;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -56,6 +57,8 @@ public class PlayerMovementController : MonoBehaviour
 
     private int maxJumps = 2;
     private int jumps;
+    private bool canKick = true;
+    public bool isAttacking = false;
 
     public MovementState state;
 
@@ -124,13 +127,13 @@ public class PlayerMovementController : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Space) && jumps > 0)
+        if (Input.GetKeyDown(jumpKey) && jumps > 0)
         {
             jumps -= 1;
             Jump();
         }
 
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(attackKey) && canKick)
         {
             Kick();
         }
@@ -298,8 +301,26 @@ public class PlayerMovementController : MonoBehaviour
     }
     private void Kick()
     {
+        canKick = false;
+        isAttacking = true;
+        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 3f, transform.forward, 3f);
+        foreach (var hit in hits)
+        {
+            GameObject obj = hit.collider.gameObject;
+            if (obj.CompareTag("Enemy"))
+            {
+                obj.GetComponent<GenericEnemy>().Death();
+            }
+        }
         MusicSystem.Instance.PlaySound(SoundEffects.Attack);
         playerAnimator.SetTrigger(KickAnim);
+        Invoke(nameof(ResetKick), 0.3f);
+    }
+
+    private void ResetKick()
+    {
+        canKick = true;
+        isAttacking = false;
     }
 
     public void Jump(bool doubleForce = false)
