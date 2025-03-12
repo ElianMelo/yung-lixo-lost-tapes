@@ -274,6 +274,7 @@ MonoBehaviour:
   dashForce: 300
   jumpForce: 7
   airMultiplier: 0.4
+  knockback: 10
   jumpKey: 32
   sprintKey: 306
   playerHeight: 0.1

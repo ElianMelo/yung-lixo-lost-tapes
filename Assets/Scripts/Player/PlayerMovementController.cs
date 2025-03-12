@@ -25,6 +25,7 @@ public class PlayerMovementController : MonoBehaviour
     [Header("Jumping")]
     public float jumpForce;
     public float airMultiplier;
+    public float knockback;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
@@ -312,6 +313,12 @@ public class PlayerMovementController : MonoBehaviour
         var calculatedForce = doubleForce ? jumpForce * 2 : jumpForce;
         playerRb.velocity = new Vector3(playerRb.velocity.x, 0f, playerRb.velocity.z);
         playerRb.AddForce(transform.up * calculatedForce, ForceMode.Impulse);
+    }
+
+    public void Knockback(Vector3 direction)
+    {
+        var calculatedForce = knockback * 2;
+        playerRb.AddForce((direction) * calculatedForce, ForceMode.Impulse);
     }
 
     private bool OnSlope()
