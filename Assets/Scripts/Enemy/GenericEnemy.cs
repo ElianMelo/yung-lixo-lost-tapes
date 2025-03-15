@@ -39,6 +39,7 @@ public class GenericEnemy : MonoBehaviour
     public void Death()
     {
         MusicSystem.Instance.PlaySound(SoundEffects.TakeDamage);
+        ShakeSystem.Instance.Shake();
         VFXSystem.Instance.PlayCDCollectVFX(transform.position);
         Destroy(gameObject);
     }

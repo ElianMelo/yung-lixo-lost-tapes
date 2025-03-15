@@ -303,7 +303,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         canKick = false;
         isAttacking = true;
-        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 3f, transform.forward, 3f);
+        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 1f, transform.forward, 0f);
         foreach (var hit in hits)
         {
             GameObject obj = hit.collider.gameObject;
