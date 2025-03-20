@@ -77,8 +77,8 @@ Shader "Unlit/NewUnlitShader"
                 float uv_len = length(uv);
     
                 float speed = (SPIN_ROTATION*SPIN_EASE*0.2);
-                if(IS_ROTATE){
-                   speed = 0.5 * speed;
+                if(IS_ROTATE == 1){
+                   speed = TIMESTAMP * speed;
                 }
                 speed += 302.2;
                 float new_pixel_angle = atan2(uv.y, uv.x) + speed - SPIN_EASE*20.*(1.*SPIN_AMOUNT*uv_len + (1. - 1.*SPIN_AMOUNT));
@@ -86,7 +86,7 @@ Shader "Unlit/NewUnlitShader"
                 uv = (float2((uv_len * cos(new_pixel_angle) + mid.x), (uv_len * sin(new_pixel_angle) + mid.y)) - mid);
     
                 uv *= 30.;
-                speed = 0.5*(SPIN_SPEED);
+                speed = TIMESTAMP*(SPIN_SPEED);
                 float2 uv2 = float2(uv.x, uv.y);
     
                 for(int i=0; i < 5; i++) {
