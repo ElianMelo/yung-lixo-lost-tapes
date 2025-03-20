@@ -8,6 +8,8 @@ public class GenericEnemy : MonoBehaviour
     private Transform player;
     private NavMeshAgent agent;
 
+    private bool canDecrease = true;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -30,10 +32,26 @@ public class GenericEnemy : MonoBehaviour
                 Death();
             } else
             {
+                DecreseNote();
                 MusicSystem.Instance.PlaySound(SoundEffects.TakeDamage);
                 playerMovementController.Knockback(transform.position - collision.transform.position);
             }
         }
+    }
+
+    private void DecreseNote()
+    {
+        if (canDecrease)
+        {
+            canDecrease = false;
+            Invoke(nameof(RestoreDecreseNote), 1f);
+            InterfaceSystem.Instance.DecreaseNote();
+        }
+    }
+
+    private void RestoreDecreseNote()
+    {
+        canDecrease = true;
     }
 
     public void Death()

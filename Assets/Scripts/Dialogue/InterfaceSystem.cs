@@ -18,6 +18,7 @@ public class InterfaceSystem : MonoBehaviour
     public MenuManager menuManager;
     public settingsManager settingsManager;
     public AlbumMenuController albumMenuController;
+    public NoteController noteController;
 
     private DialogData dialogData;
 
@@ -104,5 +105,15 @@ public class InterfaceSystem : MonoBehaviour
     public void SetupAlbumMenuTrack()
     {
         albumMenuController.SetupAlbumMenuTrack();
+    }
+
+    public void IncreaseNote()
+    {
+        noteController.IncreaseNoteCount();
+    }
+
+    public void DecreaseNote()
+    {
+        noteController.DecreaseNoteCount();
     }
 }

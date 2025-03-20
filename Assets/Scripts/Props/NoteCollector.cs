@@ -1,18 +1,22 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NoteCollector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool isCollected = false;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player") && !isCollected)
+        {
+            isCollected = true;
+            MusicSystem.Instance.PlaySound(SoundEffects.CollectCD);
+            InterfaceSystem.Instance.IncreaseNote();
+            VFXSystem.Instance.PlayStarGenericVFX(transform.position);
+            transform.DOScale(new Vector3(0f, 0f, 0f), 1.5f);
+            Destroy(gameObject, 17f);
+        }
     }
 }

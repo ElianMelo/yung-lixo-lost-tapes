@@ -26,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 788b5d3d1b31c5940a81ffe65c8962e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 788b5d3d1b31c5940a81ffe65c8962e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 2.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 788b5d3d1b31c5940a81ffe65c8962e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -89,6 +89,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 788b5d3d1b31c5940a81ffe65c8962e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4546158387053656317}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 788b5d3d1b31c5940a81ffe65c8962e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7883611361087319479}
   m_SourcePrefab: {fileID: 100100000, guid: 788b5d3d1b31c5940a81ffe65c8962e7, type: 3}
 --- !u!1 &320889858454587937 stripped
 GameObject:
@@ -109,6 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateAmount: 2
   rotateFactor: 1
+  xStartRotation: 0
+  zStartRotation: 0
 --- !u!135 &4860036421043671859
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -157,3 +162,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
+--- !u!114 &7883611361087319479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320889858454587937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e721a0be70a9f864bab573a707344be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
