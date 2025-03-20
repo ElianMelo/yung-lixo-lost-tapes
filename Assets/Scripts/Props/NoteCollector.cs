@@ -12,7 +12,7 @@ public class NoteCollector : MonoBehaviour
         if (other.CompareTag("Player") && !isCollected)
         {
             isCollected = true;
-            MusicSystem.Instance.PlaySound(SoundEffects.CollectCD);
+            MusicSystem.Instance.PlaySound(SoundEffects.CollectCoin);
             InterfaceSystem.Instance.IncreaseNote();
             VFXSystem.Instance.PlayStarGenericVFX(transform.position);
             transform.DOScale(new Vector3(0f, 0f, 0f), 1.5f);
