@@ -893,6 +893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cdCollectVFX: {fileID: 6518627089445608934, guid: 5ffdf5ac899d1864abda6877f5901706, type: 3}
+  starGenericVFX: {fileID: 6518627089445608934, guid: 1baf537881308e846892ec272ab43580, type: 3}
 --- !u!114 &4329620318041913398
 MonoBehaviour:
   m_ObjectHideFlags: 0

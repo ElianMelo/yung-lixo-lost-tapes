@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class CDColector : MonoBehaviour
+public class CDCollector : MonoBehaviour
 {
     public AlbumsTapes tape;
 

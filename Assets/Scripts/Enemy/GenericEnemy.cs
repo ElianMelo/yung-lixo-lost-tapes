@@ -40,7 +40,7 @@ public class GenericEnemy : MonoBehaviour
     {
         MusicSystem.Instance.PlaySound(SoundEffects.TakeDamage);
         ShakeSystem.Instance.Shake();
-        VFXSystem.Instance.PlayCDCollectVFX(transform.position);
+        VFXSystem.Instance.PlayStarGenericVFX(transform.position);
         Destroy(gameObject);
     }
 }

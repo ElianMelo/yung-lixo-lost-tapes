@@ -112,6 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateAmount: 1.5
   rotateFactor: 1
+  xStartRotation: 0.726
+  zStartRotation: -20.282
 --- !u!114 &8393791409908490200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9642d2ebeb81a42a9cd64142f8ba48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystemObject: {fileID: 6518627089445608934, guid: 5ffdf5ac899d1864abda6877f5901706, type: 3}
   tape: 1
 --- !u!54 &7456715095295653239
 Rigidbody:
@@ -151,7 +152,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!135 &4605025550740628141
 SphereCollider:
