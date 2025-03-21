@@ -9,7 +9,8 @@ public class CDCollector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && !isCollected)
+        if (PauseMananger.Instance.CurrentState == GamePauseState.Paused) return;
+        if (other.CompareTag("Player") && !isCollected)
         {
             isCollected = true;
             MusicSystem.Instance.PlaySound(SoundEffects.CollectCD);

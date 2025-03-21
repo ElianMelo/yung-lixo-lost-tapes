@@ -18,12 +18,18 @@ public class GenericEnemy : MonoBehaviour
 
     void Update()
     {
+        if (PauseMananger.Instance.CurrentState == GamePauseState.Paused)
+        {
+            agent.destination = transform.position;
+            return;
+        }
         agent.destination = player.position;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (PauseMananger.Instance.CurrentState == GamePauseState.Paused) return;
+        if (collision.gameObject.CompareTag("Player"))
         {
             PlayerMovementController playerMovementController = collision.gameObject.GetComponent<PlayerMovementController>();
 

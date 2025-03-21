@@ -8,6 +8,7 @@ public class JumpPad : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (PauseMananger.Instance.CurrentState == GamePauseState.Paused) return;
         if (isJumping) return;
         if (collision.gameObject.CompareTag("Player"))
         {

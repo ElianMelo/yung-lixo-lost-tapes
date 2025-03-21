@@ -9,6 +9,7 @@ public class NoteCollector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (PauseMananger.Instance.CurrentState == GamePauseState.Paused) return;
         if (other.CompareTag("Player") && !isCollected)
         {
             isCollected = true;
