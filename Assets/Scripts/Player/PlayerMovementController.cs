@@ -299,6 +299,15 @@ public class PlayerMovementController : MonoBehaviour
             playerRb.velocity = new Vector3(playerRb.velocity.x, maxYSpeed, playerRb.velocity.z);
         }
     }
+
+    private void AddForce(Rigidbody rb)
+    {
+        float min = -10;
+        float max = 10;
+        rb.AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+        rb.AddForce(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)), ForceMode.Impulse);
+    }
+
     private void Kick()
     {
         canKick = false;
@@ -307,7 +316,11 @@ public class PlayerMovementController : MonoBehaviour
         foreach (var hit in hits)
         {
             GameObject obj = hit.collider.gameObject;
-            if (obj.CompareTag("Enemy"))
+            if(obj.GetComponent<Rigidbody>() != null && obj.GetComponent<Rigidbody>() != playerRb)
+            {
+                AddForce(obj.GetComponent<Rigidbody>());
+            }
+            if (obj.CompareTag("Enemy") && obj.GetComponent<GenericEnemy>() != null)
             {
                 obj.GetComponent<GenericEnemy>().Death();
             }
@@ -323,7 +336,7 @@ public class PlayerMovementController : MonoBehaviour
         isAttacking = false;
     }
 
-    public void Jump(bool doubleForce = false)
+    public void Jump(float intensity = 1f)
     {
         MusicSystem.Instance.PlaySound(SoundEffects.Jump);
         if(grounded)
@@ -333,7 +346,7 @@ public class PlayerMovementController : MonoBehaviour
         {
             playerAnimator.SetTrigger(JumpTwoAnim);
         }
-        var calculatedForce = doubleForce ? jumpForce * 2 : jumpForce;
+        var calculatedForce = jumpForce * intensity;
         playerRb.velocity = new Vector3(playerRb.velocity.x, 0f, playerRb.velocity.z);
         playerRb.AddForce(transform.up * calculatedForce, ForceMode.Impulse);
     }

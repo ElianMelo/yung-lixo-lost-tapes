@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9c039e9a777d9d643a9a804908122672, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.45
+      value: 22.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c039e9a777d9d643a9a804908122672, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.278
+      value: 7.894
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c039e9a777d9d643a9a804908122672, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.8
+      value: -24.39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c039e9a777d9d643a9a804908122672, type: 3}
       propertyPath: m_LocalRotation.w
@@ -122,7 +122,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2293155004517352272}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.9
   m_Speed: 1.5
   m_Acceleration: 4
   avoidancePriority: 50

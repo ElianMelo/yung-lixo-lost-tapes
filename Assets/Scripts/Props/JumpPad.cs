@@ -5,6 +5,7 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     private bool isJumping = false;
+    public float intensity = 2f;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,7 +16,7 @@ public class JumpPad : MonoBehaviour
             isJumping = true;
             MusicSystem.Instance.PlaySound(SoundEffects.JumpPad);
             Sequence sequence = DOTween.Sequence();
-            collision.gameObject.GetComponent<PlayerMovementController>().Jump(true);
+            collision.gameObject.GetComponent<PlayerMovementController>().Jump(intensity);
             sequence.Append(transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f).SetEase(Ease.Linear));
             sequence.Append(transform.DOScale(new Vector3(1.0f, 1.0f, 1.0f), 0.2f).SetEase(Ease.Linear));
             StartCoroutine(RestoreJumping());

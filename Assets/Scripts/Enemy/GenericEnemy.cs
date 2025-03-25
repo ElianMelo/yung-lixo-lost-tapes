@@ -7,12 +7,14 @@ public class GenericEnemy : MonoBehaviour
 {
     private Transform player;
     private NavMeshAgent agent;
+    private Rigidbody rb;
 
     private bool canDecrease = true;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayerMovementController>().transform;
     }
 
@@ -65,6 +67,7 @@ public class GenericEnemy : MonoBehaviour
         MusicSystem.Instance.PlaySound(SoundEffects.TakeDamage);
         ShakeSystem.Instance.Shake();
         VFXSystem.Instance.PlayStarGenericVFX(transform.position);
-        Destroy(gameObject);
+        Destroy(agent);
+        Destroy(this);
     }
 }
