@@ -119,6 +119,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 6c2bcc53108516a4dac97c76e0e85d47, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6f0588796ac1b504590c666259865904, type: 2}
     - target: {fileID: 919132149155446097, guid: 6c2bcc53108516a4dac97c76e0e85d47, type: 3}
       propertyPath: m_Name
       value: PalmTree2

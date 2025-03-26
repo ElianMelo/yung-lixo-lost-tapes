@@ -10,12 +10,26 @@ public class GenericEnemy : MonoBehaviour
     private Rigidbody rb;
 
     private bool canDecrease = true;
+    private bool following = false;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayerMovementController>().transform;
+        StartCoroutine(CheckDistancePlayer());
+    }
+
+    public IEnumerator CheckDistancePlayer()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(1f);
+            if (Vector3.Distance(transform.position, player.position) < 10f)
+            {
+                following = true;
+            }
+        }
     }
 
     void Update()
@@ -25,7 +39,10 @@ public class GenericEnemy : MonoBehaviour
             agent.destination = transform.position;
             return;
         }
-        agent.destination = player.position;
+        if(following)
+        {
+            agent.destination = player.position;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -67,6 +84,7 @@ public class GenericEnemy : MonoBehaviour
         MusicSystem.Instance.PlaySound(SoundEffects.TakeDamage);
         ShakeSystem.Instance.Shake();
         VFXSystem.Instance.PlayStarGenericVFX(transform.position);
+        StopAllCoroutines();
         Destroy(agent);
         Destroy(this);
     }
