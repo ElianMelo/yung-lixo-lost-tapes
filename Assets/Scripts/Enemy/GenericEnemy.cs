@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -85,7 +86,9 @@ public class GenericEnemy : MonoBehaviour
         ShakeSystem.Instance.Shake();
         VFXSystem.Instance.PlayStarGenericVFX(transform.position);
         StopAllCoroutines();
+        transform.DOScale(new Vector3(0f,0f,0f), 10f);
         Destroy(agent);
         Destroy(this);
+        Destroy(gameObject, 10f);
     }
 }

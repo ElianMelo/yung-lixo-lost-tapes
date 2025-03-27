@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93a3851cd39a574c95bc4ed6b4dbfe2, type: 3}
+  m_Name: MailmanDialogData
+  m_EditorClassIdentifier: 
+  leftPortrait: {fileID: 21300000, guid: 7c105eff59bc47144878626eb514c54b, type: 3}
+  rightPortrait: {fileID: 21300000, guid: af9005def3421ca4aae6b00ade678a98, type: 3}
+  dialogs:
+  - text: Qual e a cidade que incentiva o uso de tatu?
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: a0575d14f9cdeea488f2207ecc1e45bc, type: 3}
+  - text: O uso de tatu
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: b1d126f828f6c8f48979abe3a94442bf, type: 3}
+  - text: Coe vitor
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 1ed25da610506e34a93391f55b7f6f5b, type: 3}
+  - text: Tatuzinho tatuzinho bola
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: d1b3b6d0e44edd0499c55ad4759a94c6, type: 3}
+  - text: Nao sei
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 484660ef3620bd64094e02564a706cc8, type: 3}
+  - text: Tokyo
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 12f8d044b503f2441a33c6c0e1b6279a, type: 3}
+  - text: Tenho quase certeza que tu leu isso errado
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 76bf243a971e26743828d45de507735a, type: 3}
+  - text: Qual cidade incentiva o uso do tato ...........................................
+      Porra
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: b3cb974ce08f4354ba05c31776cb4efe, type: 3}
+  - text: HAHAHAAHAHAHAHAHAHAHHAHAHAHAAHAHAHAH
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: c35c2676b3385744e987c22e99836d3b, type: 3}
