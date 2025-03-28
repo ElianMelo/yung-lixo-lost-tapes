@@ -467,7 +467,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -865,6 +865,14 @@ MonoBehaviour:
   - {fileID: 7386730375246245229}
   - {fileID: 7368391712941030302}
   - {fileID: 2590286997064539781}
+  backgroundClips:
+  - {fileID: 8300000, guid: c7c4164257ae5d6468ce7a8902aa86d8, type: 3}
+  - {fileID: 8300000, guid: ad3521ae2fe330f40b9118e60f213354, type: 3}
+  - {fileID: 8300000, guid: cf76108942b6a854790acdc95fa4ebb6, type: 3}
+  - {fileID: 8300000, guid: 3187425b7e7370f46bdef6bf2776383b, type: 3}
+  - {fileID: 8300000, guid: 075580a34f536ed4cbc5f2ba1f76d93e, type: 3}
+  - {fileID: 8300000, guid: 7c520cdd41f48944caea5ade8f73bd88, type: 3}
+  - {fileID: 8300000, guid: 8c668899fad60d5478784abd359d9a02, type: 3}
   albumDataSO: {fileID: 11400000, guid: 06c066adc19c4d0468a6fc43fe841810, type: 2}
   soundDataSO: {fileID: 11400000, guid: ea778b5267451e44d8acacdd68ac6bb3, type: 2}
 --- !u!114 &4347028546587734056

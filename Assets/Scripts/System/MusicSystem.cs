@@ -7,6 +7,7 @@ public class MusicSystem : MonoBehaviour
     [SerializeField] private AudioSource backgroundMusicAudioSource;
     [SerializeField] private AudioSource tapeMusicAudioSource;
     [SerializeField] private List<AudioSource> soundChannelList;
+    [SerializeField] private List<AudioClip> backgroundClips;
     [SerializeField] private AlbumDataSO albumDataSO;
     [SerializeField] private SoundDataSO soundDataSO;
 
@@ -17,9 +18,29 @@ public class MusicSystem : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        PlayBackgroundMusic(backgroundClips[Random.Range(0, backgroundClips.Count)]);
+    }
+
+    private void Update()
+    {
+        if(tapeMusicAudioSource.isPlaying)
+        {
+            backgroundMusicAudioSource.Pause();
+        } else
+        {
+            if(!backgroundMusicAudioSource.isPlaying)
+            {
+                backgroundMusicAudioSource.Play();
+            }
+        }
+    }
+
     public void PlayBackgroundMusic(AudioClip audioClip)
     {
         backgroundMusicAudioSource.clip = audioClip;
+        backgroundMusicAudioSource.Play();
     }
 
     public TrackData GetTapeData(AlbumsTapes tape)
