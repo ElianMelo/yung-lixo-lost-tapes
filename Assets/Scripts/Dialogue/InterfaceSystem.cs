@@ -29,6 +29,25 @@ public class InterfaceSystem : MonoBehaviour
         Instance = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (PauseMananger.Instance.CurrentState == GamePauseState.Talking) return;
+
+            if (currentMenuState == MenuStates.Disabled)
+            {
+                PauseMananger.Instance.ChangeGamePauseState(GamePauseState.Paused);
+                OpenAlbumMenu();
+            }
+            else
+            {
+                PauseMananger.Instance.ChangeGamePauseState(GamePauseState.Walking);
+                CloseAlbumMenu();
+            }
+        }
+    }
+
     public void SetDialogData(DialogData dialogData)
     {
         this.dialogData = dialogData;
