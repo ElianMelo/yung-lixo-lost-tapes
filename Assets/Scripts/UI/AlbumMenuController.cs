@@ -20,6 +20,11 @@ public class AlbumMenuController : MonoBehaviour
     public GameObject albumMenuVisuals;
     public AlbumsTapes currentTape;
 
+    [Header("Control Album Interface")]
+    [SerializeField] private GameObject albumAreaObject;
+    [SerializeField] private GameObject cartaDevAreaObject;
+    [SerializeField] private GameObject cartaArtAreaObject;
+
     void Start()
     {
         foreach (var currentTrack in albumDataSO.tracksClips)
@@ -36,6 +41,31 @@ public class AlbumMenuController : MonoBehaviour
             trackLine.SetController(this);
             tracks.Add(trackLine);
         }
+    }
+
+    public void ShowAlbum()
+    {
+        DisableAllAreas();
+        albumAreaObject.SetActive(true);
+    }
+
+    public void ShowCartaDev()
+    {
+        DisableAllAreas();
+        cartaDevAreaObject.SetActive(true);
+    }
+
+    public void ShowCartaArt()
+    {
+        DisableAllAreas();
+        cartaArtAreaObject.SetActive(true);
+    }
+
+    private void DisableAllAreas()
+    {
+        albumAreaObject.SetActive(false);
+        cartaDevAreaObject.SetActive(false);
+        cartaArtAreaObject.SetActive(false);
     }
 
     public void RevealTrack(AlbumsTapes tape)
