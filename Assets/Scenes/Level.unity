@@ -17716,7 +17716,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -17854,7 +17854,7 @@ MonoBehaviour:
   currentTrackText: {fileID: 1534726725}
   currentTrackProgress: {fileID: 1047331015}
   albumMenuVisuals: {fileID: 267333285}
-  currentTape: 0
+  currentTape: 12
   albumAreaObject: {fileID: 987106273}
   tutorialAreaObject: {fileID: 25178196}
   cartaDevAreaObject: {fileID: 255351827}
@@ -27535,7 +27535,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1090937686}
         m_TargetAssemblyTypeName: AlbumMenuController, Assembly-CSharp
-        m_MethodName: PlayTape
+        m_MethodName: UnPauseTape
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -93,9 +93,19 @@ public class MusicSystem : MonoBehaviour
         tapeMusicAudioSource.Play();
     }
 
+    public float GetTapeTime()
+    {
+        return tapeMusicAudioSource.time;
+    }
+
     public void PlayTape()
     {
         tapeMusicAudioSource.Play();
+    }
+
+    public void UnPauseTape()
+    {
+        tapeMusicAudioSource.UnPause();
     }
 
     public void PauseTape()

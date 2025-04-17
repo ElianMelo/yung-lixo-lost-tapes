@@ -18,7 +18,7 @@ public class AlbumMenuController : MonoBehaviour
     private List<TrackLine> tracks = new List<TrackLine>();
 
     public GameObject albumMenuVisuals;
-    public AlbumsTapes currentTape;
+    public AlbumsTapes currentTape = AlbumsTapes.Saude;
 
     [Header("Control Album Interface")]
     [SerializeField] private GameObject albumAreaObject;
@@ -89,10 +89,10 @@ public class AlbumMenuController : MonoBehaviour
         }
     }
 
-    public void ResumeAlbumTrack()
+    public void ResumeAlbumTrack(float tapeTime = 0f)
     {
         TrackData tapeData = MusicSystem.Instance.GetTapeData(currentTape);
-        currentTrackProgress.DOFillAmount(1f, tapeData.clip.length).SetEase(Ease.Linear);
+        currentTrackProgress.DOFillAmount(1f, tapeData.clip.length - tapeTime).SetEase(Ease.Linear);
     }
 
     public void PauseAlbumTrack()
@@ -127,18 +127,37 @@ public class AlbumMenuController : MonoBehaviour
 
     public void PlayTape()
     {
+        // cannot interact without getting any disc
+        if (currentTape == AlbumsTapes.Saude) return;
         ResumeAlbumTrack();
         MusicSystem.Instance.PlayTape();
     }
 
+    public void UnPauseTape()
+    {
+        // cannot interact without getting any disc
+        if (currentTape == AlbumsTapes.Saude) return;
+        if (MusicSystem.Instance.GetTapeTime() == 0) { 
+            StopAlbumTrack(); 
+            PlayTape(); 
+            return; 
+        }
+        ResumeAlbumTrack(MusicSystem.Instance.GetTapeTime());
+        MusicSystem.Instance.UnPauseTape();
+    }
+
     public void StopTape()
     {
+        // cannot interact without getting any disc
+        if (currentTape == AlbumsTapes.Saude) return;
         StopAlbumTrack();
         MusicSystem.Instance.StopTape();
     }
 
     public void PauseTape()
     {
+        // cannot interact without getting any disc
+        if (currentTape == AlbumsTapes.Saude) return;
         PauseAlbumTrack();
         MusicSystem.Instance.PauseTape();
     }
