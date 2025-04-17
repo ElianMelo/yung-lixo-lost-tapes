@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.6117647, g: 0.6117647, b: 0.6117647, a: 1}
+    m_PressedColor: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -316,8 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0896fb6ca43b67469f3fa73c2e94114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectedTrack: 0
+  selectedTrack: 0
   clip: {fileID: 0}
   cardName: 
-  controller: {fileID: 0}
   textField: {fileID: 2116914177748430969}
