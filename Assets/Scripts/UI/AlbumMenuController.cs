@@ -22,6 +22,7 @@ public class AlbumMenuController : MonoBehaviour
 
     [Header("Control Album Interface")]
     [SerializeField] private GameObject albumAreaObject;
+    [SerializeField] private GameObject tutorialAreaObject;
     [SerializeField] private GameObject cartaDevAreaObject;
     [SerializeField] private GameObject cartaArtAreaObject;
 
@@ -49,6 +50,12 @@ public class AlbumMenuController : MonoBehaviour
         albumAreaObject.SetActive(true);
     }
 
+    public void ShowTutorial()
+    {
+        DisableAllAreas();
+        tutorialAreaObject.SetActive(true);
+    }
+
     public void ShowCartaDev()
     {
         DisableAllAreas();
@@ -64,6 +71,7 @@ public class AlbumMenuController : MonoBehaviour
     private void DisableAllAreas()
     {
         albumAreaObject.SetActive(false);
+        tutorialAreaObject.SetActive(false);
         cartaDevAreaObject.SetActive(false);
         cartaArtAreaObject.SetActive(false);
     }
