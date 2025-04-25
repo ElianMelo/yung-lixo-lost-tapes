@@ -18,6 +18,12 @@ public class MusicTapeController : MonoBehaviour
 
     public void StartMusicTape(AlbumsTapes tapes)
     {
+        StartCoroutine(StartMusicTapeCoroutine(tapes));
+    }
+
+    private IEnumerator StartMusicTapeCoroutine(AlbumsTapes tapes)
+    {
+        yield return new WaitForSeconds(MusicSystem.Instance.SelectedTransitionDuration());
         TrackData tapeData = MusicSystem.Instance.GetTapeData(tapes);
         musicTapeName.text = tapeData.name;
         musicTapeTime.fillAmount = 0;

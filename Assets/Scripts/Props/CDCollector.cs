@@ -13,6 +13,7 @@ public class CDCollector : MonoBehaviour
         if (other.CompareTag("Player") && !isCollected)
         {
             isCollected = true;
+            MusicSystem.Instance.SelectTransition();
             MusicSystem.Instance.PlaySound(SoundEffects.CollectCD);
             InterfaceSystem.Instance.StartMusicTape(tape);
             InterfaceSystem.Instance.RevealTrack(tape);

@@ -8,6 +8,7 @@ public class AlbumDataSO : ScriptableObject
     public string albumName;
     public Sprite albumCover;
     public List<TrackData> tracksClips = new List<TrackData>();
+    public List<AudioClip> transitionClips = new List<AudioClip>();
 }
 
 [Serializable]

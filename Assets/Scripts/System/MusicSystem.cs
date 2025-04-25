@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,10 +9,13 @@ public class MusicSystem : MonoBehaviour
     [SerializeField] private AudioSource tapeMusicAudioSource;
     [SerializeField] private List<AudioSource> soundChannelList;
     [SerializeField] private List<AudioClip> backgroundClips;
+    [SerializeField] private AudioSource transitionSource;
     [SerializeField] private AlbumDataSO albumDataSO;
     [SerializeField] private SoundDataSO soundDataSO;
 
     public static MusicSystem Instance;
+
+    private AudioClip selectedTransition;
 
     private void Awake()
     {
@@ -20,17 +24,18 @@ public class MusicSystem : MonoBehaviour
 
     private void Start()
     {
+        selectedTransition = albumDataSO.transitionClips[Random.Range(0, albumDataSO.transitionClips.Count)];
         PlayBackgroundMusic(backgroundClips[Random.Range(0, backgroundClips.Count)]);
     }
 
     private void Update()
     {
-        if(tapeMusicAudioSource.isPlaying)
+        if(tapeMusicAudioSource.isPlaying || transitionSource.isPlaying)
         {
             backgroundMusicAudioSource.Pause();
         } else
         {
-            if(!backgroundMusicAudioSource.isPlaying)
+            if(!backgroundMusicAudioSource.isPlaying && !transitionSource.isPlaying)
             {
                 backgroundMusicAudioSource.Play();
             }
@@ -55,9 +60,28 @@ public class MusicSystem : MonoBehaviour
         return null;
     }
 
+    public void SelectTransition()
+    {
+        selectedTransition = albumDataSO.transitionClips[Random.Range(0, albumDataSO.transitionClips.Count)];
+        transitionSource.clip = selectedTransition;
+        transitionSource.Play();
+    }
+
     public void PlayTapeMusic(AlbumsTapes tape)
     {
-        AudioClip clip = albumDataSO.tracksClips.FirstOrDefault(t =>  t.tape == tape).clip;
+        StartCoroutine(PlayerTapeMusicWithTransition(tape));
+    }
+
+    public float SelectedTransitionDuration()
+    {
+        return selectedTransition.length;
+    }
+
+    private IEnumerator PlayerTapeMusicWithTransition(AlbumsTapes tape)
+    {
+        StopTape();
+        yield return new WaitForSeconds(selectedTransition.length);
+        AudioClip clip = albumDataSO.tracksClips.FirstOrDefault(t => t.tape == tape).clip;
         PlaySelectedTape(clip);
         InterfaceSystem.Instance.SetupAlbumMenuTrack();
     }

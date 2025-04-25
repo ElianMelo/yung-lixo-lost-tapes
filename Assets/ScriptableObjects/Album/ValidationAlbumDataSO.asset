@@ -63,3 +63,9 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 321b8d7a38076034c8a260f6d884cee9, type: 3}
     name: WE GOLD
     number: 12
+  transitionClips:
+  - {fileID: 8300000, guid: 6ead11730f0b5554aa93c5f4b4f527c4, type: 3}
+  - {fileID: 8300000, guid: ad49aa96c1477264ea99843b1e840fcf, type: 3}
+  - {fileID: 8300000, guid: f59974692df13134c9e66e0db5dfa11f, type: 3}
+  - {fileID: 8300000, guid: 1c9363178b6de7b409c4c945d05b7e76, type: 3}
+  - {fileID: 8300000, guid: 95118b4fc22054c4c867cb2abec7137a, type: 3}

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -107,11 +108,17 @@ public class AlbumMenuController : MonoBehaviour
     }
 
     public void SetupAlbumMenuTrack()
+    {   
+        StartCoroutine(SetupAlbumMenuTrackCoroutine());
+    }
+
+    private IEnumerator SetupAlbumMenuTrackCoroutine()
     {
         TrackData tapeData = MusicSystem.Instance.GetTapeData(currentTape);
         currentTrackText.text = tapeData.name;
         currentTrackProgress.fillAmount = 0;
         DOTween.Kill(currentTrackProgress);
+        yield return new WaitForSeconds(MusicSystem.Instance.SelectedTransitionDuration());
         currentTrackProgress.DOFillAmount(1f, tapeData.clip.length).SetEase(Ease.Linear);
     }
 
@@ -129,6 +136,12 @@ public class AlbumMenuController : MonoBehaviour
     {
         // cannot interact without getting any disc
         if (currentTape == AlbumsTapes.Saude) return;
+        StartCoroutine(PlayTapeCoroutine());
+    }
+
+    private IEnumerator PlayTapeCoroutine()
+    {
+        yield return new WaitForSeconds(MusicSystem.Instance.SelectedTransitionDuration());
         ResumeAlbumTrack();
         MusicSystem.Instance.PlayTape();
     }
