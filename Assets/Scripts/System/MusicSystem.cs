@@ -16,6 +16,7 @@ public class MusicSystem : MonoBehaviour
     public static MusicSystem Instance;
 
     private AudioClip selectedTransition;
+    private AudioClip selectedBackground;
 
     private IEnumerator playerTapeMusicWithTransition;
 
@@ -27,7 +28,17 @@ public class MusicSystem : MonoBehaviour
     private void Start()
     {
         selectedTransition = albumDataSO.transitionClips[Random.Range(0, albumDataSO.transitionClips.Count)];
-        PlayBackgroundMusic(backgroundClips[Random.Range(0, backgroundClips.Count)]);
+        StartCoroutine(PlayRandomBackgroundMusic());
+    }
+
+    private IEnumerator PlayRandomBackgroundMusic()
+    {
+        selectedBackground = backgroundClips[Random.Range(0, backgroundClips.Count)];
+        var backgroundMusicDuration = Random.Range(80f, 120f);
+        var startTime = Random.Range(0f, selectedBackground.length - backgroundMusicDuration);
+        PlayBackgroundMusic(selectedBackground, startTime);
+        yield return new WaitForSeconds(backgroundMusicDuration);
+        StartCoroutine(PlayRandomBackgroundMusic());
     }
 
     private void Update()
@@ -44,9 +55,10 @@ public class MusicSystem : MonoBehaviour
         }
     }
 
-    public void PlayBackgroundMusic(AudioClip audioClip)
+    public void PlayBackgroundMusic(AudioClip audioClip, float time = 0f)
     {
         backgroundMusicAudioSource.clip = audioClip;
+        backgroundMusicAudioSource.time = time;
         backgroundMusicAudioSource.Play();
     }
 
