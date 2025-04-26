@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93a3851cd39a574c95bc4ed6b4dbfe2, type: 3}
+  m_Name: DevilDialogData
+  m_EditorClassIdentifier: 
+  leftPortrait: {fileID: 21300000, guid: 7c105eff59bc47144878626eb514c54b, type: 3}
+  rightPortrait: {fileID: 21300000, guid: af9005def3421ca4aae6b00ade678a98, type: 3}
+  dialogs:
+  - text: '                                              oi'
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 82f1494a21d8fee4a9d96206af13d7e1, type: 3}
+  - text: Seu maldito quem e voce ?
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 51cf212c5fa72de43b7c7a6df5925d13, type: 3}
+  - text: Eu sou belzebu o demonio enviado pra comer teu cu TUUUUUUUUUUMM
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 973c968915ed56a47afccaf4cb017ea0, type: 3}
+  - text: Entao e mais um plano dos circulos do inferno pra tentar me capturar
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 08e37b75f2f0af64a8435a66f1bbbe69, type: 3}
+  - text: Isso mesmo seu bunda mole e quando a gente te pegar a nossa linha de fast
+      food do inferno ira prevalecer HAHAHAHAHA
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: c99731be59e802b4d8a1e872611b21de, type: 3}
+  - text: Mas voces nunca vao conseguir a culinaria brasileira vai seguir em frente
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 7bc539fb1e498294ab1a6f39b0825a1b, type: 3}
+  - text: omenecito
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 9cf2853868d4d08469a64946ca24aec9, type: 3}
+  - text: como e que e
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: ffedd8b3ff774394bbfc9e6471f4c8fc, type: 3}
+  - text: '* som de peido * '
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 2963226ccbc208748ab8ace36775ceb4, type: 3}
+  - text: Eu derrotei o seu irmao pazuzu e tambem vou te derrotar seu demonio asqueroso
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 8bdce23eac113744da4de7b19ff6a6c9, type: 3}
+  - text: O pazuzu era um merda ele nunca conseguiu nem ganha 1 x 1 de bomba patch
+      no condominio
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 7fc7ab0db98260f498ba2639c5f48246, type: 3}
+  - text: Puts grila viu esse vermelhinho parece que e forte mesmo e eu nao to conseguindo
+      me transformar no super vitey porque agora
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 45685873ef1687f4b8586eceff512541, type: 3}
+  - text: Ce ta fudido vitey HAHAHAHAHAHAHAHAH
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: affeddb2b23cd604b93e466bb19b861b, type: 3}
