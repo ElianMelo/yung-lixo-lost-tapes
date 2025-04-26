@@ -27,6 +27,8 @@ public class AlbumMenuController : MonoBehaviour
     [SerializeField] private GameObject cartaDevAreaObject;
     [SerializeField] private GameObject cartaArtAreaObject;
 
+    private IEnumerator setupAlbumMenuTrackCoroutine;
+
     void Start()
     {
         foreach (var currentTrack in albumDataSO.tracksClips)
@@ -108,8 +110,10 @@ public class AlbumMenuController : MonoBehaviour
     }
 
     public void SetupAlbumMenuTrack()
-    {   
-        StartCoroutine(SetupAlbumMenuTrackCoroutine());
+    {
+        if (setupAlbumMenuTrackCoroutine != null) StopCoroutine(setupAlbumMenuTrackCoroutine);
+        setupAlbumMenuTrackCoroutine = SetupAlbumMenuTrackCoroutine();
+        StartCoroutine(setupAlbumMenuTrackCoroutine);
     }
 
     private IEnumerator SetupAlbumMenuTrackCoroutine()

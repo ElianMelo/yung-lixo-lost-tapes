@@ -23,11 +23,11 @@ public class MusicTapeController : MonoBehaviour
 
     private IEnumerator StartMusicTapeCoroutine(AlbumsTapes tapes)
     {
-        yield return new WaitForSeconds(MusicSystem.Instance.SelectedTransitionDuration());
         TrackData tapeData = MusicSystem.Instance.GetTapeData(tapes);
         musicTapeName.text = tapeData.name;
         musicTapeTime.fillAmount = 0;
         DOTween.Kill(musicTapeTime);
+        yield return new WaitForSeconds(MusicSystem.Instance.SelectedTransitionDuration());
         musicTapeTime.DOFillAmount(1f, tapeData.clip.length).SetEase(Ease.Linear);
         musicTapeCanvas.DOAnchorPosX(finalPosition, 2f);
         StartCoroutine(StopMusicTapeCoroutine(tapeData.clip.length - 2f));

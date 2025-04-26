@@ -17,6 +17,8 @@ public class MusicSystem : MonoBehaviour
 
     private AudioClip selectedTransition;
 
+    private IEnumerator playerTapeMusicWithTransition;
+
     private void Awake()
     {
         Instance = this;
@@ -69,7 +71,9 @@ public class MusicSystem : MonoBehaviour
 
     public void PlayTapeMusic(AlbumsTapes tape)
     {
-        StartCoroutine(PlayerTapeMusicWithTransition(tape));
+        if (playerTapeMusicWithTransition != null) StopCoroutine(playerTapeMusicWithTransition);
+        playerTapeMusicWithTransition = PlayerTapeMusicWithTransition(tape);
+        StartCoroutine(playerTapeMusicWithTransition);
     }
 
     public float SelectedTransitionDuration()
@@ -83,7 +87,7 @@ public class MusicSystem : MonoBehaviour
         yield return new WaitForSeconds(selectedTransition.length);
         AudioClip clip = albumDataSO.tracksClips.FirstOrDefault(t => t.tape == tape).clip;
         PlaySelectedTape(clip);
-        InterfaceSystem.Instance.SetupAlbumMenuTrack();
+        //InterfaceSystem.Instance.SetupAlbumMenuTrack();
     }
 
     public void PlaySound(SoundEffects soundEffects)
