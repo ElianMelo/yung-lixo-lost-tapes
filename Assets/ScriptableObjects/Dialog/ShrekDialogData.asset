@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93a3851cd39a574c95bc4ed6b4dbfe2, type: 3}
+  m_Name: ShrekDialogData
+  m_EditorClassIdentifier: 
+  leftPortrait: {fileID: 21300000, guid: 7c105eff59bc47144878626eb514c54b, type: 3}
+  rightPortrait: {fileID: 21300000, guid: 500fa1cc54e3b634bb6023b73b8266de, type: 3}
+  dialogs:
+  - text: Essa e a minha casa
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 3532719bf78934e41959485686884fbc, type: 3}
+  - text: Como e que eu como o shrek
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 31d3a1cadae44bf4db1b26d3479b2ba5, type: 3}
+  - text: Ah isso nao foi nada legal
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: a6099026b8455724b8421b88e598fbcb, type: 3}
+  - text: Olha a Fiona cara olha a Fiona
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 3f9d5a05dff1c294db770ab987370718, type: 3}
+  - text: Fiona !
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: dead6c34a30fed54c8c0a4587b1664b6, type: 3}
+  - text: Ui ai eu deveria ta comendo a mulher dos outros
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 0568b9169e8354046b01f00505c2e6cc, type: 3}
+  - text: Cara que bom que eu sei que ele mete logo tres filhos pra dentro dessa
+      ogra safada
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 5976eb6e9c977a94d8a75816a240022f, type: 3}
+  - text: Hu hu melhor pra fora do que pra dentro e o meu lema
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: cf12affcc90138d4ba9227ec6d343fb2, type: 3}
+  - text: Cavaleiros e as cebolas vamo la
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 09612bd5e56c1ed4a8eaf9b49c3693e2, type: 3}
+  - text: Nos somos como cebolas
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 6700591b5340a5d4f9883c788b7a19e3, type: 3}
+  - text: Camadas as cebolas tem camadas os ogros tem camadas a cebola tem camadas
+      entendeu nos dois temos camadas UGH
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: c9c56e46d05599045ae6fdf1e88b47ea, type: 3}
+  - text: O que fizeram com o shrek mano ele apanha agora de espantalhos mano
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 72c8c47b209a89949b26ec2dcef2513a, type: 3}
+  - text: Eu ja peguei o rato cego qual a diferenca do rato pro rato cego
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: d670168f756c8e04f82d07b86279e2ca, type: 3}
+  - text: Eu sou o rato cego
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: e4582af6207fd284eaec5336440ca6a7, type: 3}
+  - text: Ta legal
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: baac0661bd16d464882f8ab1bf5d4431, type: 3}
+  - text: Nao e o melhor shrek do mundo
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 2df493ab377526040a3963a07b64a3f7, type: 3}
+  - text: hu hu gracas a deus e sexta feira hein
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: a7f542c93d35c8d45b69db1ef464d168, type: 3}
+  - text: Ta promete tudo afinal e o shrek
+    isFirstPortrait: 1
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: a0d558539ad5b234285ca89ccbc2cd9b, type: 3}
+  - text: Essa e a parte que voces saem correndo
+    isFirstPortrait: 0
+    isBothPortrait: 0
+    clip: {fileID: 8300000, guid: 7e7cc1aca8a8d2f4486b30d8a2cf68fe, type: 3}
