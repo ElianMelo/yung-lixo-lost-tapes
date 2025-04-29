@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Dreamteck.Splines;
 using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
@@ -36,6 +37,7 @@ public class PlayerMovementController : MonoBehaviour
     public float playerHeight;
     public LayerMask whatIsGround;
     private bool grounded;
+    private bool flying;
     private bool running;
     private bool backwards;
 
@@ -63,6 +65,7 @@ public class PlayerMovementController : MonoBehaviour
     public MovementState state;
 
     private Animator playerAnimator;
+    private SplineFollower splineFollower;
     public enum MovementState
     {
         walking,
@@ -75,15 +78,18 @@ public class PlayerMovementController : MonoBehaviour
 
     private readonly static string IsBackwards = "IsBackwards";
     private readonly static string IsGrounded = "IsGrounded";
+    private readonly static string IsFlying = "IsFlying";
     private readonly static string IsRunning = "IsRunning";
     private readonly static string JumpAnim = "Jump";
     private readonly static string JumpTwoAnim = "JumpTwo";
     private readonly static string KickAnim = "Kick";
+    private readonly static string FlyAnim = "Fly";
 
     private void Start()
     {
         playerAnimator = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody>();
+        splineFollower = GetComponent<SplineFollower>();
         playerRb.freezeRotation = true;
         jumps = maxJumps;
     }
@@ -91,6 +97,7 @@ public class PlayerMovementController : MonoBehaviour
     private void Update()
     {
         if (PauseMananger.Instance.CurrentState == GamePauseState.Paused) return;
+        if (flying) return;
         // grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         if (grounded) jumps = maxJumps;
 
@@ -118,8 +125,29 @@ public class PlayerMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         if (PauseMananger.Instance.CurrentState == GamePauseState.Paused) return;
+        if (flying) return;
         Move();
         RotatePlayer();
+    }
+
+    public void SetupSplineComputer(SplineComputer splineComputer)
+    {
+        flying = true;
+        splineFollower.SetPercent(0f);
+        playerAnimator.SetBool(IsFlying, flying);
+        playerAnimator.SetTrigger(FlyAnim);
+        splineFollower.spline = splineComputer;
+        splineFollower.follow = true;
+    }
+
+    public void StopFlying()
+    {    
+        flying = false;
+        playerAnimator.SetBool(IsFlying, flying);
+        splineFollower.spline = null;
+        splineFollower.follow = false;
+        transform.rotation = Quaternion.Euler(0f,0f,0f);
+        Jump();
     }
 
     private void GetInputs()
@@ -381,6 +409,7 @@ public class PlayerMovementController : MonoBehaviour
         playerAnimator.SetBool(IsBackwards, backwards);
         playerAnimator.SetBool(IsGrounded, grounded);
         playerAnimator.SetBool(IsRunning, running);
+        playerAnimator.SetBool(IsFlying, flying);
     }
 
     private void RotatePlayer()

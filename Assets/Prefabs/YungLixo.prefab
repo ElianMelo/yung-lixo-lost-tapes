@@ -146,31 +146,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.498
+      value: 6.463
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.323
+      value: 8.41
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.34
+      value: -32.894
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7553576
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.6553127
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -178,7 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 81.887
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -224,6 +224,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2514175626096536018}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4286923188202325305}
   m_SourcePrefab: {fileID: 100100000, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
 --- !u!1 &4925601576993226094 stripped
 GameObject:
@@ -287,6 +290,7 @@ MonoBehaviour:
   cameraOrientation: {fileID: 2910660520236157684}
   slopeDetectorFront: {fileID: 591726200798278102}
   slopeDetectorBack: {fileID: 8256971198295849419}
+  isAttacking: 0
   state: 0
   dashing: 0
 --- !u!54 &2771943003543544190
@@ -339,6 +343,116 @@ CapsuleCollider:
   m_Height: 57
   m_Direction: 1
   m_Center: {x: 0, y: 26.539398, z: 0}
+--- !u!114 &4286923188202325305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4925601576993226094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc1a2536715a24095c464a2c394d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateMethod: 0
+  _spline: {fileID: 0}
+  _autoUpdate: 1
+  _rotationModifier:
+    blend: 1
+    useClippedPercent: 0
+    keys: []
+  _offsetModifier:
+    blend: 1
+    useClippedPercent: 0
+    keys: []
+  _colorModifier:
+    blend: 1
+    useClippedPercent: 0
+    keys: []
+  _sizeModifier:
+    blend: 1
+    useClippedPercent: 0
+    keys: []
+  _clipFromSample:
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
+    percent: 0
+  _clipToSample:
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
+    percent: 0
+  _loopSamples: 0
+  _clipFrom: 0
+  _clipTo: 1
+  animClipFrom: 0
+  animClipTo: 1
+  multithreaded: 0
+  buildOnAwake: 1
+  buildOnEnable: 0
+  applyDirectionRotation: 1
+  useTriggers: 0
+  triggerGroup: 0
+  _direction: 1
+  _dontLerpDirection: 0
+  _physicsMode: 0
+  _motion:
+    _hasOffset: 0
+    _hasRotationOffset: 0
+    _offset: {x: 0, y: 0}
+    _rotationOffset: {x: 0, y: 0, z: 0}
+    _baseScale: {x: 1, y: 1, z: 1}
+    _2dMode: 0
+    velocityHandleMode: 0
+    applyPositionX: 1
+    applyPositionY: 1
+    applyPositionZ: 1
+    applyPosition2D: 1
+    retainLocalPosition: 0
+    direction: 1
+    applyRotationX: 1
+    applyRotationY: 1
+    applyRotationZ: 1
+    applyRotation2D: 1
+    retainLocalRotation: 0
+    applyScaleX: 0
+    applyScaleY: 0
+    applyScaleZ: 0
+    targetUser: {fileID: 0}
+  targetRigidbody: {fileID: 0}
+  targetRigidbody2D: {fileID: 0}
+  targetTransform: {fileID: 5697212017605650388}
+  _result:
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
+    percent: 0
+  wrapMode: 0
+  followMode: 0
+  autoStartPosition: 0
+  _follow: 1
+  _startPosition: 0
+  preserveUniformSpeedWithOffset: 0
+  _followSpeed: 5
+  _followDuration: 1
+  _speedModifier:
+    blend: 1
+    useClippedPercent: 0
+    keys: []
+  _unityOnEndReached:
+    m_PersistentCalls:
+      m_Calls: []
+  _unityOnBeginningReached:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &5697212017605650388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
