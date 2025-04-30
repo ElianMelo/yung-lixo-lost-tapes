@@ -158,19 +158,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7553576
+      value: 0.7660445
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6553127
+      value: 0.6427876
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -178,7 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 81.887
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eac90ca4b793cd94abf539c73cf11074, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -395,7 +395,7 @@ MonoBehaviour:
   animClipTo: 1
   multithreaded: 0
   buildOnAwake: 1
-  buildOnEnable: 0
+  buildOnEnable: 1
   applyDirectionRotation: 1
   useTriggers: 0
   triggerGroup: 0
@@ -449,7 +449,19 @@ MonoBehaviour:
     keys: []
   _unityOnEndReached:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2937683147690171228}
+        m_TargetAssemblyTypeName: PlayerMovementController, Assembly-CSharp
+        m_MethodName: StopFlying
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _unityOnBeginningReached:
     m_PersistentCalls:
       m_Calls: []

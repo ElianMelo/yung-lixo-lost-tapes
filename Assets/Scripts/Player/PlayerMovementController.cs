@@ -138,12 +138,17 @@ public class PlayerMovementController : MonoBehaviour
     private IEnumerator StartFlying(SplineComputer splineComputer)
     {
         flying = true;
+        splineFollower.follow = false;
         splineFollower.SetPercent(0f);
-        yield return new WaitForSeconds(0.3f);
+        splineFollower.spline = splineComputer;
+        splineFollower.RebuildImmediate();
+        splineFollower.Restart(0f);
+        splineFollower.enabled = false;
+        yield return new WaitForSeconds(1f);
         MusicSystem.Instance.PlaySound(SoundEffects.Explosion);
         playerAnimator.SetBool(IsFlying, flying);
         playerAnimator.SetTrigger(FlyAnim);
-        splineFollower.spline = splineComputer;
+        splineFollower.enabled = true;
         splineFollower.follow = true;
     }
 
