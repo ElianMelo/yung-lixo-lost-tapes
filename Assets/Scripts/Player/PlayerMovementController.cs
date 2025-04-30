@@ -132,8 +132,15 @@ public class PlayerMovementController : MonoBehaviour
 
     public void SetupSplineComputer(SplineComputer splineComputer)
     {
+        StartCoroutine(StartFlying(splineComputer));
+    }
+
+    private IEnumerator StartFlying(SplineComputer splineComputer)
+    {
         flying = true;
         splineFollower.SetPercent(0f);
+        yield return new WaitForSeconds(0.3f);
+        MusicSystem.Instance.PlaySound(SoundEffects.Explosion);
         playerAnimator.SetBool(IsFlying, flying);
         playerAnimator.SetTrigger(FlyAnim);
         splineFollower.spline = splineComputer;
