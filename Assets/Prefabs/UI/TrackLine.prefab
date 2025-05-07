@@ -199,8 +199,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 01 - RUMO A VITORIA
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0cbcb9af32f3c644eb126c39409bb5d2, type: 2}
-  m_sharedMaterial: {fileID: -5131960209016240454, guid: 0cbcb9af32f3c644eb126c39409bb5d2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17df216f5a0cf7b4297d507c97aa210e, type: 2}
+  m_sharedMaterial: {fileID: -66792627521030885, guid: 17df216f5a0cf7b4297d507c97aa210e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
