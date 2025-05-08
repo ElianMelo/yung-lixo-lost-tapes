@@ -26,6 +26,7 @@ public class AlbumMenuController : MonoBehaviour
     [SerializeField] private GameObject tutorialAreaObject;
     [SerializeField] private GameObject cartaDevAreaObject;
     [SerializeField] private GameObject cartaArtAreaObject;
+    [SerializeField] private GameObject cartaUIUXAreaObject;
 
     private IEnumerator setupAlbumMenuTrackCoroutine;
 
@@ -71,12 +72,19 @@ public class AlbumMenuController : MonoBehaviour
         cartaArtAreaObject.SetActive(true);
     }
 
+    public void ShowCartaUIUX()
+    {
+        DisableAllAreas();
+        cartaUIUXAreaObject.SetActive(true);
+    }
+
     private void DisableAllAreas()
     {
         albumAreaObject.SetActive(false);
         tutorialAreaObject.SetActive(false);
         cartaDevAreaObject.SetActive(false);
         cartaArtAreaObject.SetActive(false);
+        cartaUIUXAreaObject.SetActive(false);
     }
 
     public void RevealTrack(AlbumsTapes tape)
